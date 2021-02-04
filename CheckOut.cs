@@ -15,12 +15,11 @@ namespace MovieRental
 
         [Display(Name = "Date Out")]
         [DisplayFormat(DataFormatString = "{0:C2}")]
-        [Required]
+
         public DateTime Date_Out { get; set; }
         //
         [Display(Name = "Date Return")]
         [DisplayFormat(DataFormatString = "{0:C2}")]
-        [Required]
         public DateTime Date_Return { get; set; }
     }
 }

@@ -11,6 +11,5 @@ namespace MovieRental
     {
         [Display(Name = "Movie Id")]
         public int Id { get; set; }
-
     }
 }
