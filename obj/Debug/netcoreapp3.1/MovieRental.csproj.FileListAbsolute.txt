@@ -1,0 +1,13 @@
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\MovieRental.exe
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\MovieRental.deps.json
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\MovieRental.runtimeconfig.json
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\MovieRental.runtimeconfig.dev.json
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\MovieRental.dll
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\MovieRental.pdb
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.csprojAssemblyReference.cache
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.AssemblyInfoInputs.cache
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.AssemblyInfo.cs
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.csproj.CoreCompileInputs.cache
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.dll
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.pdb
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.genruntimeconfig.cache

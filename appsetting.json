@@ -1,0 +1,5 @@
+{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=DESKTOP-JL710UN\\SQLEXPRESS;Database=KryptoSystem;Trusted_Connection=True;"
+    }
+}
