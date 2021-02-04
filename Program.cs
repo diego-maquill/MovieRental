@@ -24,7 +24,7 @@ namespace MovieRental
         }
         static void ShowCustomerTable()
         {
-            var Customer_Video = new Customer_Video(_iconfiguration);
+            var Customer_Video = new Customer_Video_Connection(_iconfiguration);
             var Customers = Customer_Video.GetList();
             Customers.ForEach(item =>
             {

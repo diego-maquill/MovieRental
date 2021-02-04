@@ -13,10 +13,10 @@ using Microsoft.Extensions.Configuration;
 namespace MovieRental
 {
     // this manages the connection to the database
-    public class Customer_Video
+    public class Customer_Video_Connection
     {
         private string _connectionString;
-        public Customer_Video(IConfiguration iconfiguration)
+        public Customer_Video_Connection(IConfiguration iconfiguration)
         {
             _connectionString = iconfiguration.GetConnectionString("Default");
         }

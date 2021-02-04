@@ -9,12 +9,13 @@ namespace MovieRental
 {
     public class Customer
     {
-        [Display(Name = "Customer ID")]
+        [Display(Name = "Id")]
         public int Id { get; set; }
-
+        //
         [Display(Name = "First Name")]
         [Required]
         public string FirstName { get; set; }
+        //
         [Display(Name = "Last Name")]
         [Required]
         public string LastName { get; set; }
@@ -24,7 +25,6 @@ namespace MovieRental
         [NotMapped]
 
         [Display(Name = "Customer Name")]
-
         //public virtual ICollection<Customer> Customer { get; set; }
         public string Name
         {
