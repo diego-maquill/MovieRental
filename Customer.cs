@@ -33,5 +33,10 @@ namespace MovieRental
                 return FirstName + " " + LastName;
             }
         }
+        [NotMapped]
+        [JsonIgnore]
+        public List<Movies> Movies { get; set; }
+        [NotMapped]
+        public List<CheckOut> CheckOut { get; set; }
     }
 }

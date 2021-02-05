@@ -1,5 +1,5 @@
 {
     "ConnectionStrings": {
-        "DefaultConnection": "Server=DESKTOP-JL710UN\\SQLEXPRESS;Database=KryptoSystem;Trusted_Connection=True;"
+        "DefaultConnection": "Server=DESKTOP-JL710UN\\SQLEXPRESS;Database=Customer_Video;Trusted_Connection=True;"
     }
 }
