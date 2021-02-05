@@ -18,7 +18,7 @@ namespace MovieRental
         private string _connectionString;
         public Customer_Video_Connection(IConfiguration iconfiguration)
         {
-            _connectionString = iconfiguration.GetConnectionString("Default");
+            _connectionString = iconfiguration.GetConnectionString("DefaultConnection");
         }
         public DbSet<Customer> Customer { get; set; }
 
