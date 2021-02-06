@@ -4,25 +4,21 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+using MovieRental.Models;
 
 namespace MovieRental
 {
-    public class Customer
+    public class Customer : CustomerDTO
     {
-        [Display(Name = "Id")]
-        public int Id { get; set; }
-        //
-        [Display(Name = "First Name")]
-        [Required]
-        public string FirstName { get; set; }
-        //
-        [Display(Name = "Last Name")]
-        [Required]
-        public string LastName { get; set; }
-        [Phone]
-        [Display(Name = "Phone number")]
-        public string Phone { get; set; }
-        [NotMapped]
+
+        public Customer(CustomerDTO customerDTO)
+        {
+            Id = customerDTO.Id;
+            FirstName = customerDTO.FirstName;
+            LastName = customerDTO.LastName;
+            PhoneNumber = customerDTO.PhoneNumber;
+        }
+        public Customer() { }
 
         [Display(Name = "Customer Name")]
         //public virtual ICollection<Customer> Customer { get; set; }
@@ -33,10 +29,10 @@ namespace MovieRental
                 return FirstName + " " + LastName;
             }
         }
-        [NotMapped]
+
         [JsonIgnore]
         public List<Movies> Movies { get; set; }
-        [NotMapped]
+
         public List<CheckOut> CheckOut { get; set; }
     }
 }

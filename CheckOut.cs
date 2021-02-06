@@ -9,6 +9,9 @@ namespace MovieRental
 {
     public class CheckOut
     {
+        public int Id { get; set; }
+        public int CustomerId { get; set; }
+        public int MovieId { get; set; }
         //
         [Display(Name = "Movie Name")]
         public string Movie_Name { get; set; }
