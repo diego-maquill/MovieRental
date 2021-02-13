@@ -3,6 +3,8 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using ConsoleTables;
+using System.Linq;
 
 namespace MovieRental
 {
@@ -13,8 +15,9 @@ namespace MovieRental
         {
             //  Console.WriteLine("Hello World!");
             GetAppSettingsFile();
-            ShowSingleCustomer();
-            // ShowAllCustomers();
+            //   ShowSingleCustomer();
+            // ShowListOfAllCustomers();
+            ShowAllActiveRentals();
         }
         static void GetAppSettingsFile()
         {
@@ -24,11 +27,28 @@ namespace MovieRental
                                  .AddEnvironmentVariables();
             _iconfiguration = builder.Build();
         }
-        static void ShowAllCustomers()
+        static void ShowAllActiveRentals()
+        {
+            var ShowAllActiveRentals = new Customer_Video_Connection(_iconfiguration);
+            //var table = new ConsoleTable("one", "two", "three", "four", "five");
+            Console.WriteLine();
+            Console.WriteLine("The active rentals are:");
+
+            var ds = ShowAllActiveRentals.GeActiveRentals_ds();
+            //    var ds = ShowAllActiveRentals.DataSet(new GetActiveRentals());
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            //foreach (DataRow dr in ds.Rows)
+            {
+                //Console.WriteLine($"{dr[0]}, {dr[1]}, {dr[2]}, {dr[3]}, {dr[4]}");
+                Console.WriteLine($"{dr[0]}, {dr[1]}, {dr[2]}, {dr[3]}, {dr[4]}");
+            }
+            Console.WriteLine("Press any key to stop.");
+            Console.ReadKey();
+        }
+        static void ShowListOfAllCustomers()
         {
             var ShowAllCustomers = new Customer_Video_Connection(_iconfiguration);
             var Customers = ShowAllCustomers.GetListAllCustomers();
-            //  var singleCustomer = ShowAllCustomers.GetCustomerTest(1);
             Console.WriteLine();
             Console.WriteLine("In this table we have the following Customers:");
             Customers.ForEach(item =>

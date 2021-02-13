@@ -8,6 +8,7 @@ using Microsoft.Data.SqlClient;
 using System.Security.Claims;
 //using ConsoleApp.Model;  
 using Microsoft.Extensions.Configuration;
+//using System.Web.UI.WebControls;
 //using Microsoft.EntityFrameworkCore.Proxies;
 
 namespace MovieRental
@@ -65,7 +66,6 @@ namespace MovieRental
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     SqlCommand cmd = new SqlCommand("dbo.get_customer_by_id", conn);
-                    //SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@CustomerId", customerId));
                     //cmd.CommandType = CommandType.Text;
@@ -98,6 +98,30 @@ namespace MovieRental
             }
             return customer;
         }
+        /*       public void GetAllActiveRentals()
+              {
+                  //from inside some method:
+                  DataSet ds = GeActiveRentals_ds();
+              }
+       */
+        //   public DataTable GeActiveRentals_ds()
+        public DataSet GeActiveRentals_ds()
+        {
+            //SqlDataAdapter dataAdapter = new SqlDataAdapter(@"", conn);
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter("dbo.get_all_active_rentals", conn);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataSet getActiveRentals_ds = new DataSet();
+                //getActiveRentals_ds = new DataSet();
+                dataAdapter.Fill(getActiveRentals_ds);
+                return getActiveRentals_ds;
+                //      return getActiveRentals_ds.Tables[0];
+            }
+        }
+
+
+
         public List<Customer> GetListAllCustomers()
         {
             var List_Of_Customers = new List<Customer>();

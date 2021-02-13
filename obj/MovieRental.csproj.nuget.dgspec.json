@@ -44,6 +44,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "CommandDotNet": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "ConsoleTables": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
@@ -75,6 +83,11 @@
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[3.1.8, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

@@ -150,3 +150,6 @@ C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRen
 C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.csproj.CopyComplete
 C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\CommandDotNet.dll
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\bin\Debug\netcoreapp3.1\ConsoleTables.dll
+C:\Users\standish\Every_Developing_Job\1.Dotnet_CSharp\ASP.NET_Projects\MovieRental\obj\Debug\netcoreapp3.1\MovieRental.sourcelink.json
