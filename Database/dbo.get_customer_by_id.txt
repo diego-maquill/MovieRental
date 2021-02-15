@@ -1,0 +1,27 @@
+USE [Customer_Video]
+GO
+/****** Object:  StoredProcedure [dbo].[get_customer_by_id]    Script Date: 2/15/2021 1:26:03 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Proc [dbo].[get_customer_by_id] @CustomerId int
+as
+BEGIN
+
+DECLARE @found BIT = 0
+DECLARE @p_last_name Varchar(50)
+DECLARE @p_first_name Varchar(50)
+DECLARE @p_phone_no Varchar(50)
+DECLARE @Id Int
+	IF EXISTS(Select 1 From Customer WHere ID = @CustomerId)
+	BEGIN
+		SELECT @p_last_name=LastName, @Id = Id, @p_first_name = FirstName, @p_phone_no = PhoneNumber From Customer WHere ID = @CustomerId
+		Set @found = 1
+	END
+
+	SELECT @found as Found, @Id as Id, @p_last_name as LastName, @p_first_name as FirstName, @p_phone_no as Phone_No
+
+	
+END
+

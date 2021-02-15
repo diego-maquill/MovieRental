@@ -1,0 +1,19 @@
+USE [Customer_Video]
+GO
+/****** Object:  StoredProcedure [dbo].[get_all_active_rentals]    Script Date: 2/15/2021 1:25:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+	ALTER Proc [dbo].[get_all_active_rentals]
+	as
+	Select 
+	--c.Id as CustomerId,
+	c.LastName as LastName,
+	c.FirstName as FirstName,
+	m.Id,
+	m.Code,
+	m.Movie_Name,
+	m.Disctype
+	from Customer c Join CheckOut  o on c.Id=o.CustomerId join Movies m on m.Id = o. MovieId
+	Where Date_Returned is null
