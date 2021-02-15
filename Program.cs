@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using System.IO;
 using ConsoleTables;
 using System.Linq;
+using System.Text;
 
 namespace MovieRental
 {
@@ -30,18 +31,68 @@ namespace MovieRental
         static void ShowAllActiveRentals()
         {
             var ShowAllActiveRentals = new Customer_Video_Connection(_iconfiguration);
-            //var table = new ConsoleTable("one", "two", "three", "four", "five");
             Console.WriteLine();
             Console.WriteLine("The active rentals are:");
-
-            var ds = ShowAllActiveRentals.GeActiveRentals_ds();
+            Console.WriteLine();
+            DataSet ds = ShowAllActiveRentals.GeActiveRentals_ds();
             //    var ds = ShowAllActiveRentals.DataSet(new GetActiveRentals());
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            //foreach (DataRow dr in ds.Rows)
+            /*        
+                   string currentLine = "";
+                   var nameLengths = new int[ds.Tables[0].Columns.Count];
+                   var i = 0;
+                   foreach (var col in ds.Tables[0].Columns)
+                   {
+                       var colName = col.ToString();
+                       nameLengths[i] = colName.Length;
+                       currentLine += " " + colName;
+                       i++;
+                   }
+                   Console.WriteLine(currentLine);
+        */
+            // var dataLength = new int[ds.Tables[0].Columns.Count];
+            int nCols = ds.Tables[0].Columns.Count;
+            var dataWidths = ds.Tables[0].Columns.Cast<DataColumn>().Select(x => x.ColumnName.Length).ToList();
+
+            foreach (DataRow row in ds.Tables[0].Rows)
             {
-                //Console.WriteLine($"{dr[0]}, {dr[1]}, {dr[2]}, {dr[3]}, {dr[4]}");
-                Console.WriteLine($"{dr[0]}, {dr[1]}, {dr[2]}, {dr[3]}, {dr[4]}");
+                for (int i = 0; i < nCols; i++)
+                {
+                    dataWidths[i] = Math.Max(dataWidths[i], row.ItemArray[i].ToString().Length);
+                }
             }
+
+            var colFormats = dataWidths.Select(x => $"{{0,{-x}}}").ToList();
+
+            var sb = new StringBuilder();
+
+            sb.AppendLine(string.Join(" ", ds.Tables[0].Columns.Cast<DataColumn>().Select((x, i) => string.Format(colFormats[i], x.ColumnName))));
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                sb.AppendLine(string.Join(" ", row.ItemArray.Select((x, i) => string.Format(colFormats[i], x))));
+            }
+
+            Console.WriteLine(sb.ToString());
+
+            /* 
+                        foreach (DataRow row in ds.Tables[0].Rows)
+                        //foreach (DataRow row in ds.Rows)
+                        {
+                            //Console.WriteLine($"{row[0]}, {row[1]}, {row[2]}, {row[3]}, {row[4]}");
+                            currentLine = "";
+                            i = 0;
+                            foreach (var item in row.ItemArray)
+                            {
+                                var field = item.ToString();
+                                //      dataLength[i] = field.Length;
+                                //currentLine += " " + field.PadRight(nameLengths[i], ' ');
+                                currentLine += " " + field.PadRight(nameLengths[i], ' ');
+                                i++;
+                            }
+                            Console.WriteLine(currentLine);
+                        }
+                         */
+            Console.WriteLine();
             Console.WriteLine("Press any key to stop.");
             Console.ReadKey();
         }
